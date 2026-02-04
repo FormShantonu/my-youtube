@@ -1,19 +1,28 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../utils/appSlice";
 
 const Head = () => {
+  const dispatch = useDispatch();
+  const toggelManueHandeler = () => {
+    dispatch(toggleSidebar());
+  }
   return (
     <div className="grid grid-cols-3 gap-4 p-4 bg-white shadow-md">
       <div className="flex items-center space-x-2">
         <img
-          className="h-8"
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
-          alt="YouTube Logo"
-        />
-        <img
+          onClick={() => toggelManueHandeler()}
           className="h-6 w-6"
           src="https://png.pngtree.com/element_our/20190601/ourmid/pngtree-menu-icon-image_1344445.jpg"
           alt="Menu Icon"
         />
+        <a href="/">
+          <img
+            className="h-8"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+            alt="YouTube Logo"
+          />
+        </a>
       </div>
 
       <div className="flex items-center space-x-2">
