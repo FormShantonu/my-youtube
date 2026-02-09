@@ -8,7 +8,7 @@ const Head = () => {
     dispatch(toggleSidebar());
   }
   return (
-    <div className="grid grid-cols-3 gap-4 p-4 bg-white shadow-md">
+    <div className="grid grid-cols-3 gap-4 p-2 bg-white shadow-md">
       <div className="flex items-center space-x-2">
         <img
           onClick={() => toggelManueHandeler()}

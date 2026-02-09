@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuItem from './MenuItem'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const isManuOpen = useSelector((store)=>store.app.isSidebarOpen);
@@ -10,67 +11,67 @@ const Sidebar = () => {
     <div className='p-5 shadow-lg col-span-1'>
       <ul>
         <li>
-          Home
+          <Link to="/">Home</Link>
         </li>
         <li>
-          Shorts
+          <Link to="/shorts">Shorts</Link>
         </li>
         <li>
-          Subscriptions
+          <Link to="/subscriptions">Subscriptions</Link>
         </li>        
       </ul>
       <h1 className='font-bold'>You</h1>
       <ul>
         <li>
-          History
+          <Link to="/history">History</Link>
         </li>
         <li>
-          playLists
+          <Link to="/playLists">playLists</Link>
         </li>
         <li>
-          Your video
+          <Link to="/yourVideo">Your video</Link>
         </li>
         <li>
-          Your courses
+          <Link to="/yourCourses">Your courses</Link>
         </li>
         <li>
-          Watch later
+          <Link to="/watchLater">Watch later</Link>
         </li>
         <li>
-          Liked videos
+          <Link to="/likedVideos">Liked videos</Link>
         </li>
       </ul>
       <h1 className='font-bold'>Explore</h1>
       <ul>
         <li>
-          Shopping
+          <Link to="/shopping">Shopping</Link>
         </li>
         <li>
-          Music
+          <Link to="/music">Music</Link>
         </li>
         <li>
-          Movies
+          <Link to="/movies">Movies</Link>
         </li>
         <li>
-          Live
+          <Link to="/live">Live</Link>
         </li>
         <li>
-          Game
+          <Link to="/game">Game</Link>
         </li>
         <li>
-          News
+          <Link to="/news">News</Link>
         </li>
         <li>
-          Sports
+          <Link to="/sports">Sports</Link>
         </li>
         <li>
-          Courses
+          <Link to="/courses">Courses</Link>
         </li>
         <li>
-          Fashion & Beauty
+          <Link to="/fashion">Fashion & Beauty</Link>
         </li>
         <li>
-          Podcastes
+          <Link to="/podcastes">Podcastes</Link>
         </li>
       </ul>
     </div>
