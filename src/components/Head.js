@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../utils/appSlice";
 import { YOUTUBE_SUGGETIONS_API } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,10 +12,16 @@ const Head = () => {
   const toggelManueHandeler = () => {
     dispatch(toggleSidebar());
   }
-
+  // Access search cache from Redux store
+  const searchCache = useSelector((store)=> store.search);
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
-      getSuggestions()
+      if(searchCache[searchQuery]){
+        setSuggestions(searchCache[searchQuery]);
+      }else{
+        getSuggestions()
+      }
+      
     }, 200)
     //Clear the timer if the user types again
     return () => clearTimeout(debounceTimer);
@@ -24,6 +31,10 @@ const Head = () => {
     const data = await fetch(YOUTUBE_SUGGETIONS_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
+    // Update the cache in the Redux store
+    dispatch(cacheResults({
+      [searchQuery]: json[1]
+    }))
   }
   return (
     <div className="grid grid-cols-3 gap-4 p-2 bg-white shadow-md">
