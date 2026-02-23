@@ -80,20 +80,22 @@ const Head = () => {
             </svg>
           </button>
         </div>
-        <div className="absolute bg-white py-2 px-2 w-[25rem] shadow-lg rounded-lg border border-gray-100">
-          <ul>
-            {suggestions.map((suggestion) => (
-              <li key={suggestion} className="flex items-center px-3 py-2 shadow-sm hover:bg-gray-100">
-                <img
-                  className="mr-2 h-4 w-4"
-                  alt="history-icon"
-                  src="https://png.pngtree.com/png-clipart/20230920/original/pngtree-illustration-of-a-simple-magnifying-glass-icon-research-tool-magnifying-vector-png-image_12700281.png"
-                />
-                {suggestion}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {searchQuery && (
+          <div className="absolute bg-white py-2 px-2 w-[25rem] shadow-lg rounded-lg border border-gray-100">
+            <ul>
+              {suggestions.map((suggestion) => (
+                <li key={suggestion} className="flex items-center px-3 py-2 shadow-sm hover:bg-gray-100">
+                  <img
+                    className="mr-2 h-4 w-4"
+                    alt="history-icon"
+                    src="https://png.pngtree.com/png-clipart/20230920/original/pngtree-illustration-of-a-simple-magnifying-glass-icon-research-tool-magnifying-vector-png-image_12700281.png"
+                  />
+                  {suggestion}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       <div className="flex items-center justify-end">

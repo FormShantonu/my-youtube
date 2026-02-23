@@ -1,11 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Buttons = ({name}) => {
+const Buttons = ({ name }) => {
+  const navigate = useNavigate();
+
+  const handelButtonURL = (name) => {
+    if (name === "Live") {
+      
+      navigate("/live");
+    }
+  };
+
   return (
     <div>
-        <button className='p-2 m-2 bg-gray-200 rounded-lg'>{name}</button>
+      <button
+        onClick={() => handelButtonURL(name)}
+        className="p-2 m-2 bg-gray-200 rounded-lg"
+      >
+        {name}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Buttons
+export default Buttons;

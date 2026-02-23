@@ -28,9 +28,9 @@ const WatchPage = () => {
                     <LiveChat />
                 </div>
             </div>
+            // Comment container need to change- data coming from api and not hard coded
             <CommentContainer />
-        </div>
-        
+        </div>           
     )
 }
 export default WatchPage
