@@ -11,7 +11,7 @@ const appSlice = createSlice({
         },
         closeSidebar: (state) => {
             state.isSidebarOpen = false;
-        },
+        }
     },
 }); 
 
