@@ -81,7 +81,7 @@ const LiveChat = ({ liveChatId }) => {
 
   useEffect(() => {
     let interval = null;
-    
+
     if (liveChatId) {
       dispatch(setLiveChatId(liveChatId));
       dispatch(clearChat()); // Clear previous chat when switching
