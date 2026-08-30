@@ -49,8 +49,8 @@ const WatchPage = () => {
   }, [videoId]);
   return (
     <div className="flex flex-col w-full">
-      <div className="px-20 flex w-full">
-        <div className="w-full">
+      <div className="px-20 flex w-full gap-4">
+        <div className="flex-shrink-0">
           <iframe
             width="650"
             height="350"
@@ -62,7 +62,7 @@ const WatchPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="w-full">
+        <div className="flex-1 min-w-0">
           <LiveChat liveChatId={liveChatId} />
         </div>
       </div>
