@@ -204,7 +204,9 @@ const LiveChat = ({ liveChatId }) => {
                 />
               </svg>
             </button>
+
           )}
+          
         </div>
       </div>
       <form className="border border-gray-300 p-3 w-full rounded-lg flex flex-row gap-2 mt-2 bg-white shadow-sm"
